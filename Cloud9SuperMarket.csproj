@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="System.Configuration" />
+		<Compile Include="App.xaml.cs" />
+		<Compile Include="Views\MainWindow.xaml.cs" />
+		<Compile Include="Views\GestionProductos.xaml.cs" />
+		<Compile Include="Views\RealizarPedido.xaml.cs" />
+		<Compile Include="Views\RegistroCliente.xaml.cs" />
+		<Compile Include="DataAccess\*.cs" />
+		<Compile Include="Models\*.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Page Include="App.xaml" />
+		<Page Include="Views\MainWindow.xaml" />
+		<Page Include="Views\GestionProductos.xaml" />
+		<Page Include="Views\RealizarPedido.xaml" />
+		<Page Include="Views\RegistroCliente.xaml" />
+	</ItemGroup>
+
+</Project>
+

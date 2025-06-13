@@ -1,0 +1,39 @@
+﻿<Window x:Class="Cloud9Supermarket.Views.RegistroCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Registro de Cliente" Height="400" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Nombre:" Grid.Row="0" Grid.Column="0" Margin="5"/>
+        <TextBox x:Name="txtNombre" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+        <Label Content="Apellido:" Grid.Row="1" Grid.Column="0" Margin="5"/>
+        <TextBox x:Name="txtApellido" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        <Label Content="DNI:" Grid.Row="2" Grid.Column="0" Margin="5"/>
+        <TextBox x:Name="txtDni" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+        <Label Content="Correo:" Grid.Row="3" Grid.Column="0" Margin="5"/>
+        <TextBox x:Name="txtCorreo" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+        <Label Content="Teléfono:" Grid.Row="4" Grid.Column="0" Margin="5"/>
+        <TextBox x:Name="txtTelefono" Grid.Row="4" Grid.Column="1" Margin="5"/>
+
+        <Button Content="Registrar" Grid.Row="5" Grid.ColumnSpan="2" 
+                HorizontalAlignment="Center" Margin="10" Width="100"
+                Click="Registrar_Click"/>
+    </Grid>
+</Window>

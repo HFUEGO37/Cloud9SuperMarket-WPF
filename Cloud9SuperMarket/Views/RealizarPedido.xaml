@@ -1,0 +1,60 @@
+﻿<Window x:Class="Cloud9Supermarket.Views.RealizarPedido"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Realizar Pedido" Height="550" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Lista de productos disponibles -->
+        <GroupBox Header="Productos disponibles" Grid.Row="0" Grid.Column="0">
+            <DataGrid x:Name="dgDisponibles" AutoGenerateColumns="False" IsReadOnly="True"
+                     SelectionMode="Single" Margin="5">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding IdProducto}" Width="Auto"/>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                    <DataGridTextColumn Header="Precio" Binding="{Binding Precio, StringFormat=C}" Width="Auto"/>
+                    <DataGridTextColumn Header="Stock" Binding="{Binding Stock}" Width="Auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+
+        <!-- Lista de productos seleccionados -->
+        <GroupBox Header="Productos en pedido" Grid.Row="0" Grid.Column="2">
+            <DataGrid x:Name="dgPedido" AutoGenerateColumns="False" Margin="5">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                    <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}" Width="Auto"/>
+                    <DataGridTextColumn Header="Precio Unitario" Binding="{Binding PrecioUnitario, StringFormat=C}" Width="Auto"/>
+                    <DataGridTextColumn Header="Subtotal" Binding="{Binding Subtotal, StringFormat=C}" Width="Auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+
+        <!-- Total del pedido -->
+        <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center">
+            <Button Content=">" Click="AgregarAlPedido_Click" Margin="0,0,0,10"/>
+            <Button Content="X" Click="QuitarDelPedido_Click"/>
+        </StackPanel>
+
+        <!-- Botones -->
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal" 
+                    HorizontalAlignment="Center" Margin="0,10,0,0">
+            <TextBlock Text="Cantidad:" VerticalAlignment="Center" Margin="5"/>
+            <TextBox Name="txtCantidad" Width="50" Margin="5" Text="1"/>
+            <Button Content="Agregar al pedido" Click="AgregarAlPedido_Click" Margin="5" Width="120"/>
+            <Button Content="Quitar seleccionado" Click="QuitarDelPedido_Click" Margin="5" Width="120"/>
+            <TextBlock Text="Total:" VerticalAlignment="Center" Margin="5,5,0,5"/>
+            <TextBlock Name="txtTotal" Text="0.00" VerticalAlignment="Center" Margin="0,5,5,5" Width="60"/>
+            <Button Content="Confirmar pedido" Click="ConfirmarPedido_Click" Margin="5" Width="120"/>
+        </StackPanel>
+    </Grid>
+</Window>

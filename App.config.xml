@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<connectionStrings>
+		<add name="Cloud9SupermarketDB"
+             connectionString="server=localhost;database=cloud9market;uid=root;pwd=;port=3306;"
+             providerName="MySql.Data.MySqlClient"/>
+	</connectionStrings>
+</configuration>
